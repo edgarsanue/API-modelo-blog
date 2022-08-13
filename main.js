@@ -16,15 +16,14 @@ const bodyInput = document.querySelector('#body')
 const urlSearchParams = new URLSearchParams(window.location.search)
 const postId = urlSearchParams.get('id')
 
+
 ////////////////get all posts ////////////////////////
 
 async function getAllPost(){
     const response = await fetch(url);
-
-    console.log(response);
-
     const data = await response.json();
 
+    console.log(response);
     console.log(data);
 
     loadingElement.classList.add('hide');
@@ -57,7 +56,6 @@ async function getPost(id) {
     ])
 
     const dataPost = await responsePost.json();
-
     const dataComments = await responseComments.json();
 
     loadingElement.classList.add("hide");
